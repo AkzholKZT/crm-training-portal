@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Portal - Обучение сотрудников</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="bi bi-building"></i> CRM Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#crm-training">Обучение CRM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#internet">Домашний интернет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Доп. услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#knowledge">База знаний</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacts">Контакты</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" id="searchForm">
+                    <input class="form-control me-2" type="search" placeholder="Поиск..." id="searchInput">
+                    <button class="btn btn-outline-light" type="submit">Найти</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="welcome-banner">
+                    <h1>Добро пожаловать в CRM Portal</h1>
+                    <p class="lead">Система обучения для сотрудников отдела продаж</p>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <h3>Быстрые ссылки</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <a href="#crm-training" class="card quick-link-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">📚 Обучение CRM</h5>
+                                        <p class="card-text">Пошаговые инструкции по работе с CRM</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#internet" class="card quick-link-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🌐 Домашний интернет</h5>
+                                        <p class="card-text">Тарифы и условия подключения</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#services" class="card quick-link-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">📱 SIM-карты</h5>
+                                        <p class="card-text">Activ, Altel, eSIM и дополнительные услуги</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="#faq" class="card quick-link-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">❓ FAQ</h5>
+                                        <p class="card-text">Часто задаваемые вопросы</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Последние обновления</h3>
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <span class="badge bg-success">Новое</span>
+                                        <small>Обновлен тариф "Оптимал"</small>
+                                    </li>
+                                    <li class="mb-2">
+                                        <span class="badge bg-info">Инфо</span>
+                                        <small>Добавлена инструкция по eSIM</small>
+                                    </li>
+                                    <li class="mb-2">
+                                        <span class="badge bg-warning">Важно</span>
+                                        <small>Изменены условия подключения</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3>Новости и акции</h3>
+                        <div id="news-home" class="news-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CRM Training Section -->
+        <section id="crm-training" class="section">
+            <div class="container">
+                <h2>Обучение CRM</h2>
+                <p class="lead">Пошаговые инструкции по работе с системой CRM</p>
+
+                <div class="accordion" id="crmAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#crm1">
+                                1. Вход в CRM
+                            </button>
+                        </h2>
+                        <div id="crm1" class="accordion-collapse collapse show" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Инструкция по входу в систему</h4>
+                                <ol>
+                                    <li>Откройте браузер и перейдите по ссылке CRM-системы</li>
+                                    <li>Введите ваш логин (обычно employee ID)</li>
+                                    <li>Введите пароль</li>
+                                    <li>Нажмите кнопку "Войти"</li>
+                                    <li>При первом входе смените пароль на безопасный</li>
+                                </ol>
+                                <div class="alert alert-info">
+                                    <strong>Совет:</strong> Сохраните ссылку на CRM в закладках браузера для быстрого доступа
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm2">
+                                2. Создание клиента
+                            </button>
+                        </h2>
+                        <div id="crm2" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Как создать нового клиента</h4>
+                                <ol>
+                                    <li>В главном меню выберите "Клиенты" → "Добавить клиента"</li>
+                                    <li>Заполните обязательные поля:
+                                        <ul>
+                                            <li>ФИО</li>
+                                            <li>Телефон</li>
+                                            <li>Адрес</li>
+                                            <li>Паспортные данные</li>
+                                        </ul>
+                                    </li>
+                                    <li>Выберите тип клиента (физическое/юридическое лицо)</li>
+                                    <li>Нажмите "Сохранить"</li>
+                                </ol>
+                                <div class="alert alert-warning">
+                                    <strong>Важно:</strong> Проверьте правильность введенных данных перед сохранением
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm3">
+                                3. Создание заявки
+                            </button>
+                        </h2>
+                        <div id="crm3" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Порядок создания заявки</h4>
+                                <ol>
+                                    <li>Выберите клиента из списка</li>
+                                    <li>Нажмите "Создать заявку"</li>
+                                    <li>Выберите тип услуги (интернет, SIM-карта, доп. услуги)</li>
+                                    <li>Выберите тарифный план</li>
+                                    <li>Укажите желаемую дату подключения</li>
+                                    <li>Добавьте комментарии при необходимости</li>
+                                    <li>Отправьте заявку на обработку</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm4">
+                                4. Подключение домашнего интернета
+                            </button>
+                        </h2>
+                        <div id="crm4" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Процесс подключения интернета</h4>
+                                <ol>
+                                    <li>Создайте заявку на тип услуги "Домашний интернет"</li>
+                                    <li>Выберите тариф из предложенных</li>
+                                    <li>Укажите need оборудование (роутер)</li>
+                                    <li>Проверьте техническую возможность подключения</li>
+                                    <li>Согласуйте дату визита техника</li>
+                                    <li>Информируйте клиента о сроках подключения</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm5">
+                                5. Продажа SIM-карты
+                            </button>
+                        </h2>
+                        <div id="crm5" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Продажа и активация SIM-карты</h4>
+                                <ol>
+                                    <li>Выберите оператора (Activ или Altel)</li>
+                                    <li>Выберите тарифный план</li>
+                                    <li>Сканируйте SIM-карту в системе</li>
+                                    <li>Заполните данные клиента</li>
+                                    <li>Проведите идентификацию клиента</li>
+                                    <li>Активируйте SIM-карту</li>
+                                    <li>Выдайте чек и инструкцию клиенту</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm6">
+                                6. Добавление дополнительных услуг
+                            </button>
+                        </h2>
+                        <div id="crm6" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Подключение дополнительных услуг</h4>
+                                <ol>
+                                    <li>Откройте карточку клиента</li>
+                                    <li>Перейдите в раздел "Услуги"</li>
+                                    <li>Нажмите "Добавить услугу"</li>
+                                    <li>Выберите нужную услугу из списка</li>
+                                    <li>Подтвердите добавление</li>
+                                    <li>Информируйте клиента о изменениях</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#crm7">
+                                7. Работа со статусами заявки
+                            </button>
+                        </h2>
+                        <div id="crm7" class="accordion-collapse collapse" data-bs-parent="#crmAccordion">
+                            <div class="accordion-body">
+                                <h4>Статусы заявок и их значения</h4>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Статус</th>
+                                            <th>Описание</th>
+                                            <th>Действия</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge bg-secondary">Новая</span></td>
+                                            <td>Заявка создана, ожидает обработки</td>
+                                            <td>Назначить исполнителя</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-primary">В работе</span></td>
+                                            <td>Заявка находится в обработке</td>
+                                            <td>Мониторинг прогресса</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-info">На согласовании</span></td>
+                                            <td>Требуется подтверждение клиента</td>
+                                            <td>Связаться с клиентом</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-success">Выполнена</span></td>
+                                            <td>Услуга оказана</td>
+                                            <td>Закрыть заявку</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-danger">Отменена</span></td>
+                                            <td>Заявка отменена клиентом</td>
+                                            <td>Уточнить причину</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home Internet Section -->
+        <section id="internet" class="section">
+            <div class="container">
+                <h2>Домашний интернет</h2>
+                <p class="lead">Тарифные планы и условия подключения</p>
+
+                <div class="row" id="tariffs-container">
+                    <!-- Tariffs will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Дополнительные услуги</h2>
+                <p class="lead">SIM-карты и мобильные услуги</p>
+
+                <ul class="nav nav-tabs" id="servicesTabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#activ">Activ</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#altel">Altel</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#esim">eSIM</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#family">Семейные тарифы</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3" id="servicesTabsContent">
+                    <div class="tab-pane fade show active" id="activ">
+                        <div class="row" id="activ-plans"></div>
+                    </div>
+                    <div class="tab-pane fade" id="altel">
+                        <div class="row" id="altel-plans"></div>
+                    </div>
+                    <div class="tab-pane fade" id="esim">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>eSIM - виртуальная SIM-карта</h4>
+                                <p>eSIM - это встроенная SIM-карта, которая не требует физического носителя.</p>
+                                <h5>Преимущества:</h5>
+                                <ul>
+                                    <li>Не нужна физическая SIM-карта</li>
+                                    <li>Можно использовать несколько номеров на одном устройстве</li>
+                                    <li>Быстрое подключение</li>
+                                    <li>Экологично</li>
+                                </ul>
+                                <h5>Как подключить:</h5>
+                                <ol>
+                                    <li>Проверьте совместимость устройства</li>
+                                    <li>Обратитесь к менеджеру для получения QR-кода</li>
+                                    <li>Сканируйте QR-код в настройках телефона</li>
+                                    <li>Активируйте eSIM</li>
+                                </ol>
+                                <div class="alert alert-info">
+                                    <strong>Стоимость:</strong> Бесплатно при подключении тарифа
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="family">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Семейные тарифы</h4>
+                                <p>Объедините всю семью на одном счете и экономьте!</p>
+                                <h5>Условия:</h5>
+                                <ul>
+                                    <li>От 2 до 5 номеров на одном счете</li>
+                                    <li>Общие минуты и ГБ для всей семьи</li>
+                                    <li>Скидка до 20% на каждом номере</li>
+                                    <li>Единый счет для всех номеров</li>
+                                </ul>
+                                <h5>Тарифы:</h5>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Тариф</th>
+                                            <th>Кол-во номеров</th>
+                                            <th>ГБ</th>
+                                            <th>Минуты</th>
+                                            <th>Стоимость</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Семья Мини</td>
+                                            <td>2</td>
+                                            <td>20</td>
+                                            <td>300</td>
+                                            <td>3500 ₸/мес</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Семья Стандарт</td>
+                                            <td>3</td>
+                                            <td>40</td>
+                                            <td>600</td>
+                                            <td>5000 ₸/мес</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Семья Максимум</td>
+                                            <td>5</td>
+                                            <td>80</td>
+                                            <td>1200</td>
+                                            <td>8000 ₸/мес</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <h2>FAQ - Часто задаваемые вопросы</h2>
+                <p class="lead">Ответы на популярные вопросы</p>
+
+                <ul class="nav nav-pills mb-3" id="faqTabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#faq-internet">Интернет</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#faq-sim">SIM-карты</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="faqTabsContent">
+                    <div class="tab-pane fade show active" id="faq-internet">
+                        <div class="accordion" id="faqInternetAccordion"></div>
+                    </div>
+                    <div class="tab-pane fade" id="faq-sim">
+                        <div class="accordion" id="faqSimAccordion"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base Section -->
+        <section id="knowledge" class="section">
+            <div class="container">
+                <h2>База знаний</h2>
+                <p class="lead">Скрипты продаж, инструкции и документы</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5>📝 Скрипты продаж</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="#">Скрипт продажи домашнего интернета</a></li>
+                                    <li class="list-group-item"><a href="#">Скрипт продажи SIM-карты</a></li>
+                                    <li class="list-group-item"><a href="#">Скрипт допродажи услуг</a></li>
+                                    <li class="list-group-item"><a href="#">Работа с возражениями</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5>📋 Инструкции</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="#">Инструкция по работе с CRM</a></li>
+                                    <li class="list-group-item"><a href="#">Инструкция по подключению eSIM</a></li>
+                                    <li class="list-group-item"><a href="#">Инструкция по смене тарифа</a></li>
+                                    <li class="list-group-item"><a href="#">Инструкция по переносу номера</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5>📄 Документы</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="#">Регламент работы с клиентами</a></li>
+                                    <li class="list-group-item"><a href="#">Политика обработки данных</a></li>
+                                    <li class="list-group-item"><a href="#">Договор оферты</a></li>
+                                    <li class="list-group-item"><a href="#">Тарифный справочник</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h5>💡 Ответы на возражения</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="#">"Дорого"</a></li>
+                                    <li class="list-group-item"><a href="#">"Подумаю"</a></li>
+                                    <li class="list-group-item"><a href="#">"У меня уже есть провайдер"</a></li>
+                                    <li class="list-group-item"><a href="#">"Ненадежно"</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <div class="container">
+                <h2>Новости</h2>
+                <p class="lead">Актуальные новости и акции</p>
+                <div id="news-container" class="news-grid"></div>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section id="contacts" class="section">
+            <div class="container">
+                <h2>Контакты</h2>
+                <p class="lead">Свяжитесь с нами</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>Форма обратной связи</h4>
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Ваше имя</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Сообщение</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h4>📞 Контакты администратора</h4>
+                                <p><strong>Телефон:</strong> +7 (777) 123-45-67</p>
+                                <p><strong>Email:</strong> admin@crm-portal.kz</p>
+                                <p><strong>Время работы:</strong> Пн-Пт 9:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>🔧 Техническая поддержка</h4>
+                                <p><strong>Телефон:</strong> +7 (777) 987-65-43</p>
+                                <p><strong>Email:</strong> support@crm-portal.kz</p>
+                                <p><strong>Время работы:</strong> 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 CRM Portal. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Внутренняя система для сотрудников</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
